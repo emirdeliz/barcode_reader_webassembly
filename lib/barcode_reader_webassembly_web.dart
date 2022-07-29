@@ -1,10 +1,12 @@
+import 'dart:async';
 import 'dart:html';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'barcode_reader_webassembly_platform_interface.dart';
 
 class ReadBarcodeProps {
   ReadBarcodeProps(this.file);
-  late File file;
+
+  late File? file;
   late String? filePath = '';
   late num? scale = 1;
   late num? sequenceNum = 0;
@@ -17,12 +19,22 @@ class BarcodeReaderWebassemblyWeb extends BarcodeReaderWebassemblyPlatform {
     loadJs();
   }
 
-  static void loadJs() {
-    ScriptElement scriptBarcodeLib = ScriptElement();
+  static Future<void> loadJs() {
+    const isEnvironmentTest = bool.fromEnvironment('TEST_ENV');
+    final Completer completer = Completer();
+    final scriptBarcodeLib = ScriptElement();
+
     scriptBarcodeLib.type = 'text/javascript';
-    scriptBarcodeLib.src =
-        'assets/packages/barcode_reader_webassembly/assets/barcode-reader.js';
+    scriptBarcodeLib.onLoad.listen((_) {
+      completer.complete();
+    });
+
+    scriptBarcodeLib.src = isEnvironmentTest
+        ? 'assets/barcode-reader.js'
+        : 'assets/packages/barcode_reader_webassembly/assets/barcode-reader.js';
+
     document.body!.append(scriptBarcodeLib);
+    return completer.future;
   }
 
   @override
