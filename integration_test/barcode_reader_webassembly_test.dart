@@ -3,10 +3,13 @@ import 'dart:html';
 import 'package:barcode_reader_webassembly/barcode_reader_webassembly_web.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:barcode_reader_webassembly/barcode_reader_webassembly.dart';
+import 'package:integration_test/integration_test.dart';
 
 import '__mock__/barcode.dart';
 
 void main() {
+  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
   group('Barcode test', () {
     late BarcodeReaderWebassembly barcodeReaderWebassemblyPlugin;
     setUpAll(() async {
@@ -14,70 +17,71 @@ void main() {
       await awaitInitializeBarcodeJs(barcodeReaderWebassemblyPlugin);
     });
 
-    test('Have a barcode from Campelo', () async {
+    testWidgets('Have a barcode from Campelo', (tester) async {
       final barcodeData = barcodeMock.elementAt(0);
       final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
           compileFileMockPath(barcodeData['fileName'] as String));
       expect(result, barcodeData['barcode']);
     });
 
-    test('Have a barcode from Celesc', () async {
+    testWidgets('Have a barcode from Celesc', (tester) async {
       final barcodeData = barcodeMock.elementAt(1);
       final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
           compileFileMockPath(barcodeData['fileName'] as String));
       expect(result, barcodeData['barcode']);
     });
 
-    test('Have a barcode from Gps', () async {
+    testWidgets('Have a barcode from Gps', (tester) async {
       final barcodeData = barcodeMock.elementAt(2);
       final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
           compileFileMockPath(barcodeData['fileName'] as String));
       expect(result, barcodeData['barcode']);
     });
 
-    test('Have a barcode from Detran', () async {
+    testWidgets('Have a barcode from Detran', (tester) async {
       final barcodeData = barcodeMock.elementAt(3);
       final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
           compileFileMockPath(barcodeData['fileName'] as String));
       expect(result, barcodeData['barcode']);
     });
 
-    test('Have a barcode from Super Gasbras', () async {
+    testWidgets('Have a barcode from Super Gasbras', (tester) async {
       final barcodeData = barcodeMock.elementAt(4);
       final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
           compileFileMockPath(barcodeData['fileName'] as String));
       expect(result, barcodeData['barcode']);
     });
 
-    test('Have a barcode from Net Black And White', () async {
+    testWidgets('Have a barcode from Net Black And White', (tester) async {
       final barcodeData = barcodeMock.elementAt(5);
       final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
           compileFileMockPath(barcodeData['fileName'] as String));
       expect(result, barcodeData['barcode']);
     });
 
-    test('Have a barcode from Nubank', () async {
+    testWidgets('Have a barcode from Nubank', (tester) async {
       final barcodeData = barcodeMock.elementAt(6);
       final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
           compileFileMockPath(barcodeData['fileName'] as String));
       expect(result, barcodeData['barcode']);
     });
 
-    test('Have a barcode from Contabilivre Barcode On Second Page', () async {
+    testWidgets('Have a barcode from Contabilivre Barcode On Second Page',
+        (tester) async {
       final barcodeData = barcodeMock.elementAt(7);
       final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
           compileFileMockPath(barcodeData['fileName'] as String));
       expect(result, barcodeData['barcode']);
     });
 
-    test('Have a barcode from Cora', () async {
+    testWidgets('Have a barcode from Cora', (tester) async {
       final barcodeData = barcodeMock.elementAt(8);
       final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
           compileFileMockPath(barcodeData['fileName'] as String));
       expect(result, barcodeData['barcode']);
     });
 
-    test('Have a barcode from Cora Duedate On Weekend', () async {
+    testWidgets('Have a barcode from Cora Duedate On Weekend', (tester) async {
       final barcodeData = barcodeMock.elementAt(9);
       final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
           compileFileMockPath(barcodeData['fileName'] as String));
