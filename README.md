@@ -9,7 +9,10 @@ You have to use two methods to read a barcode.
 
 About **ReadBarcodeProps**:
 
-**file** (optional): The file related to pdf file 
+**file** (optional): The file related to pdf file.
+
 **filePath** (optional): The url related to pdf file.
+
 **scale** (optional): The scale or zoom applied on the pdf document before search barcode.
+
 **sequenceNum** (optional): The sequence number of the image when working with multiple barcodes.
