@@ -6,16 +6,17 @@ This project is a wrapper for the project [Barcode Read - Ts and Webassembly.
 ## Getting Started
 You have to use two methods to read a barcode. 
 
-**readBarcodeFromStack**: This method receives a ReadBarcodeProps and inserts the request on the stack of requests. This can be utils when you make multiple barcodes reads at the same.
-
-**readBarcode**: This method receives a ReadBarcodeProps and makes a simple read.
+| **Method** | **Description**                                                                                                                                                |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **readBarcodeFromStack** | This method receives a ReadBarcodeProps and inserts the request on the stack of requests. This can be utils when you make multiple barcodes reads at the same. |
+| **readBarcode** | This method receives a ReadBarcodeProps and makes a simple read. |
 
 About **ReadBarcodeProps**:
 
-**file** (optional): The file related to pdf file.
-
-**filePath** (optional): The url related to pdf file.
-
-**scale** (optional): The scale or zoom applied on the pdf document before search barcode.
-
-**sequenceNum** (optional): The sequence number of the image when working with multiple barcodes.
+| **Prop**  | **Type** | **Description** |
+|-----------|----------|---------------------------------------------------------------------|
+| **top**   | boolean  | Define the priority to open the menu on **_top_** of the trigger. |
+| **left**  | boolean  | Define the priority to open the menu on **_left_** of the trigger. |
+| **right** | boolean  | Define the priority to open the menu on **_right_** of the trigger. |
+| **child** | Widget   | Trigger widget (like ElevatedButton, Text and etc...). |
+| **items** | List>    | Menu options. |
