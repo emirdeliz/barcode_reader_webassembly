@@ -1,6 +1,6 @@
 name: barcode_reader_webassembly
 description: A flutter web plugin to read barcode using webassembly and zbar.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/emirdeliz/barcode_reader_webassembly
 
 environment:
