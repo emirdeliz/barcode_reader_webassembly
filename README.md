@@ -13,10 +13,9 @@ You have to use two methods to read a barcode.
 
 About **ReadBarcodeProps**:
 
-| **Prop**  | **Type** | **Description** |
-|-----------|----------|---------------------------------------------------------------------|
-| **top**   | boolean  | Define the priority to open the menu on **_top_** of the trigger. |
-| **left**  | boolean  | Define the priority to open the menu on **_left_** of the trigger. |
-| **right** | boolean  | Define the priority to open the menu on **_right_** of the trigger. |
-| **child** | Widget   | Trigger widget (like ElevatedButton, Text and etc...). |
-| **items** | List     | Menu options. |
+| **Prop**                   | **Type** | **Description**                                                       |
+|----------------------------|----------|-----------------------------------------------------------------------|
+| **file** (optional)        | boolean  | The file related to pdf file.                                         |
+| **filePath** (optional)    | boolean  | The url related to pdf file.                                          |
+| **scale** (optional)       | boolean  | The scale or zoom applied on the pdf document before search barcode.  |
+| **sequenceNum** (optional) | Widget   | The sequence number of the image when working with multiple barcodes. |
