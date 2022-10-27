@@ -6,16 +6,16 @@ This project is a wrapper for the project [Barcode Read - Ts and Webassembly.
 ## Getting Started
 You have to use two methods to read a barcode. 
 
-| **Method** | **Description**                                                                                                                                                |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Method**                          | **Description**                                                                                                                                                                                                                 |
+|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **readBarcodeFromStack** | This method receives a ReadBarcodeProps and inserts the request on the stack of requests. This can be utils when you make multiple barcodes reads at the same. |
-| **readBarcode** | This method receives a ReadBarcodeProps and makes a simple read. |
+| **readBarcode**                  | This method receives a ReadBarcodeProps and makes a simple read.                                                                                                                                                         |
 
 About **ReadBarcodeProps**:
 
-| **Prop**                   | **Type** | **Description**                                                       |
-|----------------------------|----------|-----------------------------------------------------------------------|
-| **file** (optional)        | boolean  | The file related to pdf file.                                         |
-| **filePath** (optional)    | boolean  | The url related to pdf file.                                          |
-| **scale** (optional)       | boolean  | The scale or zoom applied on the pdf document before search barcode.  |
-| **sequenceNum** (optional) | Widget   | The sequence number of the image when working with multiple barcodes. |
+| **Prop**                               | **Type** | **Description**                                                                                  |
+|-------------------------------------|--------------|------------------------------------------------------------------------------------|
+| **file** (optional)                   | boolean      | The file related to pdf file.                                                                      |
+| **filePath** (optional)            | boolean      | The url related to pdf file.                                                                      |
+| **scale** (optional)                | boolean      | The scale or zoom applied on the pdf document before search barcode.     |
+| **sequenceNum** (optional)  | Widget       | The sequence number of the image when working with multiple barcodes. |
