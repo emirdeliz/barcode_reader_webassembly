@@ -19,4 +19,4 @@ About **ReadBarcodeProps**:
 | **left**  | boolean  | Define the priority to open the menu on **_left_** of the trigger. |
 | **right** | boolean  | Define the priority to open the menu on **_right_** of the trigger. |
 | **child** | Widget   | Trigger widget (like ElevatedButton, Text and etc...). |
-| **items** | List>    | Menu options. |
+| **items** | List     | Menu options. |
