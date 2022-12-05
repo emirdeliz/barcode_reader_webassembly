@@ -1,4 +1,4 @@
-name: Count Down Time:Tests
+name: App:Tests
 on: [push]
 jobs:
   test:
