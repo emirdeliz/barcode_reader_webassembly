@@ -17,8 +17,7 @@ class BarcodeReaderWebassemblyInterop extends BarcodeReaderWebassemblyPlatform {
     /// It's converting the JavaScript Promise to a Dart Future.
     final barcode = await promiseToFuture(
         BarcodeReaderWebassemblyInteropJs.readBarcodeFromStack(
-      readBarcodeJsProps,
-    ));
+            readBarcodeJsProps));
     return barcode;
   }
 
@@ -49,9 +48,6 @@ class BarcodeReaderWebassemblyInterop extends BarcodeReaderWebassemblyPlatform {
     /// setting the `wasmPath` property to `assets`. Otherwise, it's setting it to
     /// `assets/packages/barcode_reader_webassembly/assets`.
     const isEnvironmentTest = bool.fromEnvironment('TEST_ENV');
-    const wasmPath = isEnvironmentTest
-        ? 'assets'
-        : 'assets/packages/barcode_reader_webassembly/assets';
 
     /// It's creating a new `BarcodeReadJsProps` object and assigning it to the `readBarcodeJsProps`
     /// variable.
@@ -60,7 +56,10 @@ class BarcodeReaderWebassemblyInterop extends BarcodeReaderWebassemblyPlatform {
     readBarcodeJsProps.filePath = readBarcodeProps.filePath;
     readBarcodeJsProps.scale = readBarcodeProps.scale;
     readBarcodeJsProps.sequenceNum = readBarcodeProps.sequenceNum;
-    readBarcodeJsProps.wasmPath = wasmPath;
+    readBarcodeJsProps.wasmPath = isEnvironmentTest
+        ? 'assets'
+        : 'assets/packages/barcode_reader_webassembly/assets';
+
     return readBarcodeJsProps;
   }
 }
