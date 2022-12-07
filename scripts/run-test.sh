@@ -5,4 +5,4 @@ mkdir web &&
 		--target=integration_test/barcode_reader_webassembly_test.dart \
 		--dart-define=TEST_ENV=true \
 		-d web-server \
-		--release --web-port=9191 --browser-name=chrome --headless --disable-gpu
+		--release --web-port=9191 --browser-name=chrome --headless
