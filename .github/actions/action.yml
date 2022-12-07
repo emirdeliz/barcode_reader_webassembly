@@ -6,6 +6,9 @@ runs:
     - uses: subosito/flutter-action@v1
       with:
         channel: 'stable'
+    - name: Prepare environment action
+      run: flutter config --enable-windows-desktop
+      shell: sh
     # - name: Prepare environment action
     #   run: sh ./scripts/run-chrome-install.sh
     #   shell: sh

@@ -15,8 +15,6 @@ jobs:
           echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
           echo "🖥️ The workflow is now ready to test your code on the runner."
       - uses: ./.github/actions
-      - run: |
-          flutter config --enable-windows-desktop
       - name: Running tests
         run: |
           flutter test -d windows integration_test/barcode_reader_webassembly_test.dart
