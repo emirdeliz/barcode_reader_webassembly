@@ -6,11 +6,6 @@ runs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-    - name: Check out repository code
-      uses: actions/checkout@v3
-    - run: |
-        echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-        echo "🖥️ The workflow is now ready to test your code on the runner."
       shell: sh
     - name: Prepare environment action
       run: sh ./scripts/run-chrome-install.sh
