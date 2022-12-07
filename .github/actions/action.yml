@@ -7,7 +7,7 @@ runs:
       with:
         channel: 'stable'
     - name: Prepare environment action
-      run: flutter config --enable-windows-desktop
+      run: flutter create --platforms=windows
       shell: sh
     # - name: Prepare environment action
     #   run: sh ./scripts/run-chrome-install.sh
