@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd driver_test/chromedriver && ./chromedriver --port=4444 &
+cd driver_test/chromedriver && ./chromedriver --port=4444 --whitelisted-ips= &
 sleep 10 &&
 	flutter drive \
 		--driver=driver_test/integration_test.dart \
