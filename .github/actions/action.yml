@@ -7,13 +7,7 @@ runs:
       with:
         channel: 'beta'
     - name: Prepare environment action
-      run: |
-        echo 'pull down choco'
-        powershell -Command Install-PackageProvider -name chocolatey -Force
-        powershell -Command Set-PackageSource -Name chocolatey -Trusted
-        powershell -Command Get-PackageSource
-        echo 'install chrome via choco'
-        powershell -Command Install-Package GoogleChrome -MinimumVersion 74
+      run: sh ./scripts/run-chrome-install.sh
       shell: sh
     - uses: nanasess/setup-chromedriver@v1
     - run: |

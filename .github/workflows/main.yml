@@ -2,7 +2,9 @@ name: App:Main
 on: [push]
 jobs:
   test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
+    container:
+      image: cirrusci/flutter
     steps:
       - name: Initialize tests
         run: |

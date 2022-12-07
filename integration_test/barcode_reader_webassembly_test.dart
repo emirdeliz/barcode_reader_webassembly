@@ -24,69 +24,69 @@ void main() {
       expect(result, barcodeData['barcode']);
     });
 
-    testWidgets('Have a barcode from Celesc', (tester) async {
-      final barcodeData = barcodeMock.elementAt(1);
-      final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
-          compileFileMockPath(barcodeData['fileName'] as String));
-      expect(result, barcodeData['barcode']);
-    });
+    // testWidgets('Have a barcode from Celesc', (tester) async {
+    //   final barcodeData = barcodeMock.elementAt(1);
+    //   final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
+    //       compileFileMockPath(barcodeData['fileName'] as String));
+    //   expect(result, barcodeData['barcode']);
+    // });
 
-    testWidgets('Have a barcode from Gps', (tester) async {
-      final barcodeData = barcodeMock.elementAt(2);
-      final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
-          compileFileMockPath(barcodeData['fileName'] as String));
-      expect(result, barcodeData['barcode']);
-    });
+    // testWidgets('Have a barcode from Gps', (tester) async {
+    //   final barcodeData = barcodeMock.elementAt(2);
+    //   final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
+    //       compileFileMockPath(barcodeData['fileName'] as String));
+    //   expect(result, barcodeData['barcode']);
+    // });
 
-    testWidgets('Have a barcode from Detran', (tester) async {
-      final barcodeData = barcodeMock.elementAt(3);
-      final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
-          compileFileMockPath(barcodeData['fileName'] as String));
-      expect(result, barcodeData['barcode']);
-    });
+    // testWidgets('Have a barcode from Detran', (tester) async {
+    //   final barcodeData = barcodeMock.elementAt(3);
+    //   final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
+    //       compileFileMockPath(barcodeData['fileName'] as String));
+    //   expect(result, barcodeData['barcode']);
+    // });
 
-    testWidgets('Have a barcode from Super Gasbras', (tester) async {
-      final barcodeData = barcodeMock.elementAt(4);
-      final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
-          compileFileMockPath(barcodeData['fileName'] as String));
-      expect(result, barcodeData['barcode']);
-    });
+    // testWidgets('Have a barcode from Super Gasbras', (tester) async {
+    //   final barcodeData = barcodeMock.elementAt(4);
+    //   final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
+    //       compileFileMockPath(barcodeData['fileName'] as String));
+    //   expect(result, barcodeData['barcode']);
+    // });
 
-    testWidgets('Have a barcode from Net Black And White', (tester) async {
-      final barcodeData = barcodeMock.elementAt(5);
-      final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
-          compileFileMockPath(barcodeData['fileName'] as String));
-      expect(result, barcodeData['barcode']);
-    });
+    // testWidgets('Have a barcode from Net Black And White', (tester) async {
+    //   final barcodeData = barcodeMock.elementAt(5);
+    //   final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
+    //       compileFileMockPath(barcodeData['fileName'] as String));
+    //   expect(result, barcodeData['barcode']);
+    // });
 
-    testWidgets('Have a barcode from Nubank', (tester) async {
-      final barcodeData = barcodeMock.elementAt(6);
-      final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
-          compileFileMockPath(barcodeData['fileName'] as String));
-      expect(result, barcodeData['barcode']);
-    });
+    // testWidgets('Have a barcode from Nubank', (tester) async {
+    //   final barcodeData = barcodeMock.elementAt(6);
+    //   final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
+    //       compileFileMockPath(barcodeData['fileName'] as String));
+    //   expect(result, barcodeData['barcode']);
+    // });
 
-    testWidgets('Have a barcode from Contabilivre Barcode On Second Page',
-        (tester) async {
-      final barcodeData = barcodeMock.elementAt(7);
-      final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
-          compileFileMockPath(barcodeData['fileName'] as String));
-      expect(result, barcodeData['barcode']);
-    });
+    // testWidgets('Have a barcode from Contabilivre Barcode On Second Page',
+    //     (tester) async {
+    //   final barcodeData = barcodeMock.elementAt(7);
+    //   final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
+    //       compileFileMockPath(barcodeData['fileName'] as String));
+    //   expect(result, barcodeData['barcode']);
+    // });
 
-    testWidgets('Have a barcode from Cora', (tester) async {
-      final barcodeData = barcodeMock.elementAt(8);
-      final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
-          compileFileMockPath(barcodeData['fileName'] as String));
-      expect(result, barcodeData['barcode']);
-    });
+    // testWidgets('Have a barcode from Cora', (tester) async {
+    //   final barcodeData = barcodeMock.elementAt(8);
+    //   final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
+    //       compileFileMockPath(barcodeData['fileName'] as String));
+    //   expect(result, barcodeData['barcode']);
+    // });
 
-    testWidgets('Have a barcode from Cora Duedate On Weekend', (tester) async {
-      final barcodeData = barcodeMock.elementAt(9);
-      final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
-          compileFileMockPath(barcodeData['fileName'] as String));
-      expect(result, barcodeData['barcode']);
-    });
+    // testWidgets('Have a barcode from Cora Duedate On Weekend', (tester) async {
+    //   final barcodeData = barcodeMock.elementAt(9);
+    //   final result = await barcodeReaderWebassemblyPlugin.readBarcodeFromStack(
+    //       compileFileMockPath(barcodeData['fileName'] as String));
+    //   expect(result, barcodeData['barcode']);
+    // });
   });
 }
 
