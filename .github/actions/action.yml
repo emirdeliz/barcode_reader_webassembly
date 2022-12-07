@@ -1,0 +1,22 @@
+name: Git pull & Chromedriver initialize
+description: Git pull & Chromedriver initialize
+runs:
+  using: 'composite'
+  steps:
+    - name: Prepare environment action
+      shell: sh
+      uses: actions/checkout@v3
+      run: |
+        echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+        echo "🖥️ The workflow is now ready to test your code on the runner."
+        sh ./scripts/run-chrome-install.sh
+      with:
+        cache: chrome
+    - uses: nanasess/setup-chromedriver@v1
+      run: |
+        sh ./scripts/run-chrome-install.sh  
+        export DISPLAY=:99
+        chromedriver --url-base=/wd/hub &
+        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+      with:
+        cache: chrome-driver
