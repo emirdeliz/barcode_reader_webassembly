@@ -48,6 +48,7 @@ class BarcodeReaderWebassemblyInterop extends BarcodeReaderWebassemblyPlatform {
     /// setting the `wasmPath` property to `assets`. Otherwise, it's setting it to
     /// `assets/packages/barcode_reader_webassembly/assets`.
     const isEnvironmentTest = bool.fromEnvironment('TEST_ENV');
+    print('isEnvironmentTest interop:  ' + isEnvironmentTest.toString());
 
     /// It's creating a new `BarcodeReadJsProps` object and assigning it to the `readBarcodeJsProps`
     /// variable.

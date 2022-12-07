@@ -93,6 +93,8 @@ void main() {
 Future awaitInitializeBarcodeJs(
     BarcodeReaderWebassembly? barcodeReaderWebassemblyPlugin) async {
   final initializedBarcode = barcodeReaderWebassemblyPlugin != null;
+  print('initializedBarcode ' + initializedBarcode.toString());
+
   if (initializedBarcode) {
     return Future.value(null);
   }

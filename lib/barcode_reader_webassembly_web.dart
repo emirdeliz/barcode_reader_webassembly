@@ -35,6 +35,8 @@ class BarcodeReaderWebassemblyWeb extends BarcodeReaderWebassemblyPlatform {
       completer.complete();
     });
 
+    print('isEnvironmentTest ' + isEnvironmentTest.toString());
+
     /// It's loading the JavaScript file that contains the WebAssembly code.
     scriptBarcodeLib.src = isEnvironmentTest
         ? 'assets/barcode-reader.js'
