@@ -4,14 +4,15 @@ runs:
   using: 'composite'
   steps:
     - name: Prepare environment action
-      shell: sh
       run: sh ./scripts/run-chrome-install.sh
+      shell: sh
       with:
         cache: chrome
     - uses: nanasess/setup-chromedriver@v1
-      run: |
+    - run: |
         export DISPLAY=:99
         chromedriver --url-base=/wd/hub &
         sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+      shell: sh
       with:
         cache: chrome-driver
