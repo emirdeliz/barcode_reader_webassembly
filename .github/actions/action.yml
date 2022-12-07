@@ -5,16 +5,13 @@ runs:
   steps:
     - uses: subosito/flutter-action@v1
       with:
-        channel: 'stable'
+        channel: 'beta'
     - name: Prepare environment action
-      run: flutter create --platforms=windows
+      run: sh ./scripts/run-chrome-install.sh
       shell: sh
-    # - name: Prepare environment action
-    #   run: sh ./scripts/run-chrome-install.sh
-    #   shell: sh
-    # - uses: nanasess/setup-chromedriver@v1
-    # - run: |
-    #     export DISPLAY=:99
-    #     chromedriver --disable-gpu --port=4444 --url-base=/wd/hub --whitelisted-ips= &
-    #     sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
-    #   shell: sh
+    - uses: nanasess/setup-chromedriver@v1
+    - run: |
+        export DISPLAY=:99
+        chromedriver --disable-gpu --port=4444 --url-base=/wd/hub --whitelisted-ips= &
+        sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+      shell: sh

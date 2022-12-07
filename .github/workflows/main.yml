@@ -3,6 +3,8 @@ on: [push]
 jobs:
   test:
     runs-on: windows-latest
+    container:
+      image: cirrusci/flutter
     steps:
       - name: Initialize tests
         run: |
@@ -17,5 +19,5 @@ jobs:
       - uses: ./.github/actions
       - name: Running tests
         run: |
-          flutter test -d windows integration_test/barcode_reader_webassembly_test.dart
+          sh ./scripts/run-test.sh
           echo "🍏 This job's status is ${{ job.status }}."
