@@ -6,7 +6,6 @@ runs:
     - uses: subosito/flutter-action@v2
       with:
         channel: 'stable'
-      shell: sh
     - name: Prepare environment action
       run: sh ./scripts/run-chrome-install.sh
       shell: sh
