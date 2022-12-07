@@ -17,5 +17,7 @@ jobs:
       - uses: ./.github/actions
       - name: Running tests
         run: |
+          flutter clean
+          flutter pub get
           sh ./scripts/run-test.sh
           echo "🍏 This job's status is ${{ job.status }}."
