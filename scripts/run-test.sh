@@ -1,6 +1,7 @@
 #!/bin/sh
-sh ./scripts/run-chrome-driver.sh &&
-	# sleep 20 &&
+
+reset && cd driver_test/chromedriver && ./chromedriver --port=4444 &
+sleep 10 &&
 	reset &&
 	flutter drive \
 		--driver=driver_test/integration_test.dart \
