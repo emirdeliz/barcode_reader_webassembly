@@ -3,6 +3,9 @@ description: Git pull & Chromedriver initialize
 runs:
   using: 'composite'
   steps:
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: 'beta'
     - name: Prepare environment action
       run: sh ./scripts/run-chrome-install.sh
       shell: sh

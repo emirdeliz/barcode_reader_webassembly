@@ -3,8 +3,6 @@ on: [push]
 jobs:
   test:
     runs-on: windows-latest
-    container:
-      image: cirrusci/flutter
     steps:
       - name: Initialize tests
         run: |
