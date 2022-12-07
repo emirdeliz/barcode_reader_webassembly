@@ -19,5 +19,5 @@ jobs:
           flutter config --enable-windows-desktop
       - name: Running tests
         run: |
-          sh ./scripts/run-test.sh
+          flutter test -d windows integration_test/barcode_reader_webassembly_test.dart
           echo "🍏 This job's status is ${{ job.status }}."
