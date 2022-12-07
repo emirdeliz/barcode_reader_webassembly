@@ -5,11 +5,7 @@ runs:
   steps:
     - name: Prepare environment action
       shell: sh
-      uses: actions/checkout@v3
-      run: |
-        echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-        echo "🖥️ The workflow is now ready to test your code on the runner."
-        sh ./scripts/run-chrome-install.sh
+      run: sh ./scripts/run-chrome-install.sh
       with:
         cache: chrome
     - uses: nanasess/setup-chromedriver@v1
