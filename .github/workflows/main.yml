@@ -15,6 +15,9 @@ jobs:
           echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
           echo "🖥️ The workflow is now ready to test your code on the runner."
       - uses: ./.github/actions
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
       - name: Running tests
         run: |
           flutter clean
