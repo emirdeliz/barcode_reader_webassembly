@@ -7,4 +7,4 @@ sleep 10 &&
 		--target=integration_test/barcode_reader_webassembly_test.dart \
 		--dart-define=TEST_ENV=true \
 		-d chrome \
-		--web-port=9191 --browser-name=chrome --headless --no-sandbox
+		--web-port=9191 --browser-name=chrome --headless
