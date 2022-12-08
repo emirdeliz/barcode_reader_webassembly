@@ -1,10 +1,13 @@
-name: Git pull & Chromedriver initialize
-description: Git pull & Chromedriver initialize
+name: Install chrome & chromedriver
+description: Install chrome & chromedriver
 runs:
   using: 'composite'
   steps:
-    - name: Prepare environment action
-      run: sh ./scripts/run-chrome-install.sh
+    - name: Installing chrome
+      run: sudo sh ./scripts/exec-chrome-install.sh
+      shell: sh
+    - name: Installing chromedriver
+      run: sudo sh ./scripts/exec-chromedriver-install.sh
       shell: sh
     - uses: nanasess/setup-chromedriver@v1
     - run: |

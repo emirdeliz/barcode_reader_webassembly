@@ -22,5 +22,5 @@ jobs:
         run: |
           flutter clean
           flutter pub get
-          sh ./scripts/run-test.sh
+          sh ./scripts/exec-test.sh
           echo "🍏 This job's status is ${{ job.status }}."
