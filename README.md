@@ -4,7 +4,7 @@ This project is a wrapper for the project [Barcode Read - Ts and Webassembly](ht
 
 ## Getting Started
 
-<img src="https://raw.githubusercontent.com/emirdeliz/barcode_reader_webassembly/master/docs/demo.gif" width="300" height="auto" alt="Barcode reader webassembly - example"/>
+<img src="https://raw.githubusercontent.com/emirdeliz/barcode_reader_webassembly/master/docs/demo.gif" width="700" height="auto" alt="Barcode reader webassembly - example"/>
 
 | **Method**               | **Description**                                                                                                                                                |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
