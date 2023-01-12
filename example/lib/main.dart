@@ -1,4 +1,5 @@
 import 'dart:html';
+
 import 'package:barcode_reader_webassembly/barcode_reader_webassembly.dart';
 import 'package:barcode_reader_webassembly/barcode_reader_webassembly_web.dart';
 import 'package:flutter/material.dart';
@@ -12,13 +13,15 @@ class BarcodeReaderWebassemblyExampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'BarcodeReaderWebassembly Example',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(
-        title: 'BarcodeReaderWebassembly Example Home Page',
+      home: Scaffold(
+        backgroundColor: Color.fromRGBO(22, 27, 34, 1),
+        body: Center(
+          child: MyHomePage(
+            title: 'BarcodeReaderWebassembly Example Home Page',
+          ),
+        ),
       ),
     );
   }
@@ -76,35 +79,29 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
       children: [
-        SizedBox(
-          width: 124.0,
-          height: 48.0,
-          child: ElevatedButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Colors.blue),
-              overlayColor: MaterialStateProperty.all(
-                isProcessing ? Colors.black : Colors.transparent,
-              ),
-              padding: MaterialStateProperty.all(
-                const EdgeInsets.all(15),
-              ),
+        ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.blue),
+            overlayColor: MaterialStateProperty.all(
+              isProcessing ? Colors.black : Colors.transparent,
             ),
-            onPressed: () => _selectFile(),
-            child: const Text(
-              "Select File",
-              style: TextStyle(fontSize: 15, color: Colors.white),
+            padding: MaterialStateProperty.all(
+              const EdgeInsets.all(15),
             ),
+          ),
+          onPressed: () => _selectFile(),
+          child: const Text(
+            "Select File",
+            style: TextStyle(fontSize: 15, color: Colors.white),
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 20),
           child: Text(
             isProcessing ? 'processing...' : result,
-            style: const TextStyle(fontSize: 15),
+            style: const TextStyle(fontSize: 20, color: Colors.white),
           ),
         )
       ],
