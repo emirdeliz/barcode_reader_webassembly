@@ -1,6 +1,6 @@
 # barcode_reader_webassembly
 
-This project is a wrapper for the project [Barcode Read - Ts and Webassembly.
+This project is a wrapper for the project [Barcode Read - Ts and Webassembly
 ](https://github.com/emirdeliz/barcode-reader-zbar-webassembly).
 
 ## Getting Started
