@@ -2,9 +2,13 @@
 
 This project is a wrapper for the project [Barcode Read - Ts and Webassembly](https://github.com/emirdeliz/barcode-reader-zbar-webassembly).
 
-## Getting Started
+
 
 <img src="https://raw.githubusercontent.com/emirdeliz/barcode_reader_webassembly/master/docs/demo.gif" width="700" height="auto" alt="Barcode reader webassembly - example"/>
+
+## Getting Started
+
+You have to use two methods to read a barcode. 
 
 | **Method**               | **Description**                                                                                                                                                |
 | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
