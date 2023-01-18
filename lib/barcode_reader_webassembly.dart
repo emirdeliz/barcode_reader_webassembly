@@ -1,4 +1,4 @@
-import 'barcode_reader_webassembly_platform_interface.dart';
+import 'barcode_reader_webassembly_platform.dart';
 import 'barcode_reader_webassembly_web.dart';
 
 class BarcodeReaderWebassembly {

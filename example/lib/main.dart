@@ -1,5 +1,4 @@
 import 'dart:html';
-
 import 'package:barcode_reader_webassembly/barcode_reader_webassembly.dart';
 import 'package:barcode_reader_webassembly/barcode_reader_webassembly_web.dart';
 import 'package:flutter/material.dart';
