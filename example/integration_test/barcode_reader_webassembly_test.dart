@@ -1,10 +1,10 @@
 import 'dart:html';
 
-import 'package:barcode_reader_webassembly/barcode_reader_webassembly_web.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:barcode_reader_webassembly/barcode_reader_webassembly.dart';
 import 'package:integration_test/integration_test.dart';
 
+import '../../lib/barcode_reader_webassembly.dart';
+import '../../lib/barcode_reader_webassembly_web.dart';
 import '__mock__/barcode.dart';
 
 void main() {

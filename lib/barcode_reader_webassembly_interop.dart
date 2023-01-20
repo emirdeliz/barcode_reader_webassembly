@@ -48,10 +48,7 @@ class BarcodeReaderWebassemblyInterop extends BarcodeReaderWebassemblyPlatform {
     /// It's checking if the application is running in a test environment. If it is, then it's
     /// setting the `wasmPath` property to `assets`. Otherwise, it's setting it to
     /// `assets/packages/barcode_reader_webassembly/assets`.
-    const isEnvironmentTest = bool.fromEnvironment('TEST_ENV');
-    const wasmPath = isEnvironmentTest
-        ? 'assets'
-        : 'assets/packages/barcode_reader_webassembly/assets';
+    const wasmPath = 'assets/packages/barcode_reader_webassembly/assets';
 
     /// It's creating a new `BarcodeReadJsProps` object and assigning it to the `readBarcodeJsProps`
     /// variable.
@@ -61,6 +58,7 @@ class BarcodeReaderWebassemblyInterop extends BarcodeReaderWebassemblyPlatform {
     readBarcodeJsProps.scale = readBarcodeProps.scale;
     readBarcodeJsProps.sequenceNum = readBarcodeProps.sequenceNum;
     readBarcodeJsProps.wasmPath = wasmPath;
+    readBarcodeJsProps.onRequiredPassword = readBarcodeProps.onRequiredPassword;
     return readBarcodeJsProps;
   }
 }

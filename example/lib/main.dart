@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:html';
 import 'package:barcode_reader_webassembly/barcode_reader_webassembly.dart';
 import 'package:barcode_reader_webassembly/barcode_reader_webassembly_web.dart';
@@ -40,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   bool isProcessing = false;
   String result = '';
+  String password = '';
 
   void _uploadFile(File file) async {
     setState(() {
@@ -47,12 +49,47 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     final barcodeProps = ReadBarcodeProps(file);
+    barcodeProps.onRequiredPassword = _onRequiredPassword;
     final barcode = await _barcodeReaderWebassemblyPlugin
         .readBarcodeFromStack(barcodeProps);
     setState(() {
       result = barcode;
       isProcessing = false;
     });
+  }
+
+  Future<String> _onRequiredPassword() {
+    final completer = Completer<String>();
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Please, enter the pdf password.'),
+          content: TextField(
+            obscureText: true,
+            decoration: const InputDecoration(
+              hintText: 'enter password',
+            ),
+            onChanged: (value) {
+              setState(() {
+                password = value;
+              });
+            },
+          ),
+          actions: <Widget>[
+            // define os botões na base do dialogo
+            ElevatedButton(
+              child: const Text('Confirm'),
+              onPressed: () {
+                completer.complete(password);
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+    return completer.future;
   }
 
   void _selectFile() {

@@ -36,4 +36,7 @@ class BarcodeReadJsProps {
 
   @JS('wasmPath')
   external String wasmPath;
+
+  @JS('onRequiredPassword')
+  external Future<String> Function()? onRequiredPassword;
 }

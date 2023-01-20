@@ -11,6 +11,7 @@ class ReadBarcodeProps {
   late String? filePath = '';
   late num? scale = 1;
   late num? sequenceNum = 0;
+  late Future<String> Function()? onRequiredPassword;
 }
 
 /// It's a wrapper around the WebAssembly version of the barcode reader
@@ -26,7 +27,6 @@ class BarcodeReaderWebassemblyWeb extends BarcodeReaderWebassemblyPlatform {
   /// Returns:
   ///   A Future<void>
   static Future<void> loadJs() {
-    const isEnvironmentTest = bool.fromEnvironment('TEST_ENV');
     final Completer completer = Completer();
     final scriptBarcodeLib = ScriptElement();
 
@@ -36,9 +36,8 @@ class BarcodeReaderWebassemblyWeb extends BarcodeReaderWebassemblyPlatform {
     });
 
     /// It's loading the JavaScript file that contains the WebAssembly code.
-    scriptBarcodeLib.src = isEnvironmentTest
-        ? 'assets/barcode-reader.js'
-        : 'assets/packages/barcode_reader_webassembly/assets/barcode-reader.js';
+    scriptBarcodeLib.src =
+        'assets/packages/barcode_reader_webassembly/assets/barcode-reader.js';
 
     /// It's adding the JavaScript file to the body of the HTML page.
     document.body!.append(scriptBarcodeLib);
