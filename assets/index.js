@@ -3,19 +3,41 @@ const Methods = {
 	readBarcodeFromStack: 'readBarcodeFromStack',
 };
 
-window.jsInvokeMethod = async (method, barcodeProps) => {
-	switch (method) {
+window.jsInvokeMethod = async ({ methodTarget, arguments, file }) => {
+	const barcodeReaderParams = {
+		...arguments,
+		file,
+	};
+
+	console.log({
+		barcodeReaderParams,
+		methodTarget,
+	});
+
+	const result = {
+		methodTarget,
+		arguments: '',
+	};
+	switch (methodTarget) {
 		case Methods.readBarcode: {
-			window.BarcodeReader.readBarcode(barcodeProps);
+			result.arguments = await window.BarcodeReader.readBarcode(
+				barcodeReaderParams
+			);
 			break;
 		}
 		case Methods.readBarcodeFromStack: {
-			window.BarcodeReader.readBarcodeFromStack(barcodeProps);
+			result.arguments = await window.BarcodeReader.readBarcodeFromStack(
+				barcodeReaderParams
+			);
+			break;
+		}
+		default: {
+			result.arguments = `Unknown dart method: '${methodTarget}'`;
 			break;
 		}
 	}
-};
 
-function callDart(e) {
-	window.jsOnEvent(e);
-}
+
+	print({ result });
+	return result;
+};

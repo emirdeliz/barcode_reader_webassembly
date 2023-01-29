@@ -4,7 +4,7 @@ version: 0.0.7
 homepage: https://github.com/emirdeliz/barcode_reader_webassembly
 
 environment:
-  sdk: '>=2.17.5 <3.0.0'
+  sdk: '>=2.18.5 <3.0.0'
   flutter: '>=2.5.0'
 
 dependencies:
@@ -12,21 +12,23 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  js: ^0.6.4
+  dart_web_plugin_base: 
+    path: ../dart_web_plugin_base
+  js: ^0.6.5
+  plugin_platform_interface: ^2.0.2
+  universal_html: ^2.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  test: ^1.21.4
 
 flutter:
   assets:
-    # These assets are compiled from the project Barcode Read - Ts and Webassembly.
-    # https://github.com/emirdeliz/barcode-reader-zbar-webassembly.
-    - assets/barcode-reader.js
-    - assets/barcode-reader.wasm
+    - assets/
   plugin:
     platforms:
       web:
-        pluginClass: BarcodeReaderWebassemblyWeb
-        fileName: barcode_reader_webassembly_web.dart
+        pluginClass: BarcodeReaderWebassemblyPlugin
+        fileName: barcode_reader_webassembly_plugin.dart

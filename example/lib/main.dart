@@ -1,7 +1,9 @@
-import 'dart:html';
-import 'package:barcode_reader_webassembly/barcode_reader_webassembly.dart';
-import 'package:barcode_reader_webassembly/barcode_reader_webassembly_web.dart';
+import 'dart:async';
+
+import 'package:barcode_reader_webassembly/barcode_reader_webassembly_constants.dart';
+import 'package:barcode_reader_webassembly/barcode_reader_webassembly_plugin.dart';
 import 'package:flutter/material.dart';
+import 'package:universal_html/html.dart';
 
 void main() {
   runApp(const BarcodeReaderWebassemblyExampleApp());
@@ -38,10 +40,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final _barcodeReaderWebassemblyPlugin = BarcodeReaderWebassembly();
+  final _barcodeReaderWebassemblyPlugin = BarcodeReaderWebassemblyPlugin();
 
   bool isProcessing = false;
   String result = '';
+  String password = '';
 
   void _uploadFile(File file) async {
     setState(() {
@@ -49,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
 
     final barcodeProps = ReadBarcodeProps(file);
+    barcodeProps.onRequiredPassword = _onRequiredPassword;
     final barcode = await _barcodeReaderWebassemblyPlugin
         .readBarcodeFromStack(barcodeProps);
     setState(() {
@@ -73,6 +77,40 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+  }
+
+  Future<String> _onRequiredPassword() {
+    final completer = Completer<String>();
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Please, enter the pdf password.'),
+          content: TextField(
+            obscureText: true,
+            decoration: const InputDecoration(
+              hintText: 'enter password',
+            ),
+            onChanged: (value) {
+              setState(() {
+                password = value;
+              });
+            },
+          ),
+          actions: <Widget>[
+            // define os botões na base do dialogo
+            ElevatedButton(
+              child: const Text('Confirm'),
+              onPressed: () {
+                completer.complete(password);
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+    return completer.future;
   }
 
   @override
