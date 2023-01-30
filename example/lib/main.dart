@@ -19,7 +19,7 @@ class BarcodeReaderWebassemblyExampleApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Color.fromRGBO(22, 27, 34, 1),
         body: Center(
-          child: MyHomePage(
+          child: BarcodeReaderWebassemblyExamplePage(
             title: 'BarcodeReaderWebassembly Example Home Page',
           ),
         ),
@@ -28,18 +28,20 @@ class BarcodeReaderWebassemblyExampleApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({
+class BarcodeReaderWebassemblyExamplePage extends StatefulWidget {
+  const BarcodeReaderWebassemblyExamplePage({
     Key? key,
     required this.title,
   }) : super(key: key);
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<BarcodeReaderWebassemblyExamplePage> createState() =>
+      _BarcodeReaderWebassemblyExamplePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _BarcodeReaderWebassemblyExamplePageState
+    extends State<BarcodeReaderWebassemblyExamplePage> {
   final _barcodeReaderWebassemblyPlugin = BarcodeReaderWebassemblyPlugin();
 
   bool isProcessing = false;
@@ -98,7 +100,6 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           actions: <Widget>[
-            // define os botões na base do dialogo
             ElevatedButton(
               child: const Text('Confirm'),
               onPressed: () {

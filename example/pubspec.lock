@@ -83,9 +83,10 @@ packages:
   dart_web_plugin_base:
     dependency: transitive
     description:
-      path: "../../dart_web_plugin_base"
-      relative: true
-    source: path
+      name: dart_web_plugin_base
+      sha256: "04431418163da5dc3b47fc04fbf25cf0b6f9d9b59ae7e9f9011f406510ed1c80"
+      url: "https://pub.dev"
+    source: hosted
     version: "0.0.1"
   fake_async:
     dependency: transitive

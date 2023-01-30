@@ -17,7 +17,7 @@ const barcodeMock = [
   },
   {
     'barcode': '836100000006460001920004003839057001000828586800',
-    'filename': 'super-gasbras.pdf',
+    'filename': 'gasbras-super.pdf',
   },
   {
     'barcode': '846200000012000001622026205200860000002767195783',
@@ -38,5 +38,20 @@ const barcodeMock = [
   {
     'barcode': '00194899200000025000000003215837001008830717',
     'filename': 'cora-duedate-on-weekend.pdf',
+  },
+  {
+    'barcode': '00191899100000020000000003215837001008823817',
+    'filename': 'password-cora.pdf',
+    'password': 'Test@123',
+  },
+  {
+    'barcode': '856300000028986999123102122221023254885250100009',
+    'filename': 'password-detran.pdf',
+    'password': '12345',
+  },
+  {
+    'barcode': '23793875700000020003381260068823434000006330',
+    'filename': 'nubank.pdf',
+    'password': '!@#\$%&*()_+',
   }
 ];

@@ -13,7 +13,6 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   dart_web_plugin_base: 
-    path: ../dart_web_plugin_base
   js: ^0.6.5
   plugin_platform_interface: ^2.0.2
   universal_html: ^2.0.8

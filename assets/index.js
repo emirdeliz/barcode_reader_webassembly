@@ -8,12 +8,6 @@ window.jsInvokeMethod = async ({ methodTarget, arguments, file }) => {
 		...arguments,
 		file,
 	};
-
-	console.log({
-		barcodeReaderParams,
-		methodTarget,
-	});
-
 	const result = {
 		methodTarget,
 		arguments: '',
@@ -36,8 +30,5 @@ window.jsInvokeMethod = async ({ methodTarget, arguments, file }) => {
 			break;
 		}
 	}
-
-
-	print({ result });
 	return result;
 };
