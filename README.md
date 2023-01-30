@@ -1,5 +1,8 @@
 # barcode_reader_webassembly
 
+[![Test](https://github.com/emirdeliz/barcode_reader_webassembly/actions/workflows/test.yml/badge.svg)](https://github.com/emirdeliz/barcode_reader_webassembly/actions/workflows/test.yml)
+[![Lint](https://github.com/emirdeliz/barcode_reader_webassembly/actions/workflows/lint.yml/badge.svg)](https://github.com/emirdeliz/barcode_reader_webassembly/actions/workflows/lint.yml)
+
 This project is a wrapper for the project [Barcode Read - Ts and Webassembly](https://github.com/emirdeliz/barcode-reader-zbar-webassembly).
 
 <img src="https://raw.githubusercontent.com/emirdeliz/barcode_reader_webassembly/master/docs/demo.gif" width="700" height="auto" alt="Barcode reader webassembly - example"/>
