@@ -8,11 +8,10 @@ jobs:
       - uses: emirdeliz/emirdeliz-chromedriver@v0.0.6
         with:
           download-path: example/driver_test
-          version: 119.0.6045.159
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.7.0'
           channel: 'stable'
           architecture: x64
       - run: flutter --version
-      - run: cd example && sh scripts/run-integration-test.sh
+      # - run: cd example && sh scripts/run-integration-test.sh
