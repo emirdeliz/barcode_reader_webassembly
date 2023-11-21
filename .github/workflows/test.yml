@@ -8,7 +8,7 @@ jobs:
       - uses: emirdeliz/emirdeliz-chromedriver@v0.0.6
         with:
           download-path: example/driver_test
-          version: 114.0.5735.90
+          version: 119.0.6045.159
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.7.0'
