@@ -23,4 +23,5 @@ About **ReadBarcodeProps**:
 | **file** (optional)        | boolean  | The file related to pdf file.                                         |
 | **filePath** (optional)    | boolean  | The url related to pdf file.                                          |
 | **scale** (optional)       | boolean  | The scale or zoom applied on the pdf document before search barcode.  |
-| **sequenceNum** (optional) | Widget   | The sequence number of the image when working with multiple barcodes. |
+| **sequenceNum** (optional) | Number   | The sequence number of the image when working with multiple barcodes. |
+| **password** (optional)    | String   | The password to open the pdf file.  
